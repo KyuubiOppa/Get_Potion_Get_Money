@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ce338e4aae6fe4698d10ba57ded1c9, type: 3}
+  m_Name: RE03_Blue Potion
+  m_EditorClassIdentifier: 
+  recipeID: RE03
+  recipeName: Blue Potion
+  recipeSprite: {fileID: 21300000, guid: 9edbc61197d00494c884ca17b43c7bee, type: 3}
+  recipePrefab: {fileID: 3475781664411880860, guid: 6c3917461746893479e94598bdab7dcc,
+    type: 3}
