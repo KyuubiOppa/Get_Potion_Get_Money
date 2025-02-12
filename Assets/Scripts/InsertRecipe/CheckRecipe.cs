@@ -6,7 +6,6 @@ using UnityEngine;
 public class CheckRecipe : MonoBehaviour
 {
     public Transform recipeDropPoint; // ตำแหน่งปล่อยวัตถุดิบลงมา
-    public Transform orderOutputDropPoint; // ตำแหน่งปล่อย Output ออกมา
     [Header("Order ที่สร้างขึ้นหากสูตรถูกต้อง")]
     public SO_Order orderOutput; // Order ที่สร้างขึ้นหากสูตรถูกต้อง
 
@@ -16,6 +15,8 @@ public class CheckRecipe : MonoBehaviour
     public List<SO_Recipe> currentRecipes = new List<SO_Recipe>(); // วัตถุดิบที่ถูกใส่ในหม้อปรุงยาในปัจจุบัน
 
     public List<GameObject> currentRecipeObjs = new List<GameObject>();
+
+    public OrderServe orderServe;
 
     void Start()
     {
@@ -92,17 +93,43 @@ public class CheckRecipe : MonoBehaviour
 /// <summary>
 /// ผสม Recipe เป็น Order
 /// </summary>
+
     public void MixRecipeToOrder()
     {
-        if (orderOutput != null && orderOutput.orderPrefab != null && orderOutputDropPoint != null)
+        if (orderOutput != null && orderOutput.orderPrefab != null && orderServe.orderOutputDropPoints.Length > 0)
         {
-            // สร้าง Order ที่ตำแหน่ง orderOutputDropPoint
-            Instantiate(orderOutput.orderPrefab, orderOutputDropPoint.position, Quaternion.identity);
+            // หาตำแหน่งปล่อย Order ที่ว่างอยู่
+            Transform selectedDropPoint = null;
+            foreach (Transform dropPoint in orderServe.orderOutputDropPoints)
+            {
+                // เช็คว่าตำแหน่งปล่อย Order นั้นว่างหรือไม่ (ไม่มีลูกอยู่)
+                if (dropPoint.childCount == 0)
+                {
+                    selectedDropPoint = dropPoint;
+                    break;
+                }
+            }
 
-            // ล้างวัตถุดิบทั้งหมด
-            ClearCurrentRecipe();
+            if (selectedDropPoint != null)
+            {
+                // สร้าง Order Prefab และกำหนดให้เป็นลูกของ selectedDropPoint
+                GameObject newOrder = Instantiate(orderOutput.orderPrefab, selectedDropPoint.position, Quaternion.identity, selectedDropPoint);
 
-            Debug.Log("สร้าง Order: " + orderOutput.orderName + " และล้างวัตถุดิบทั้งหมด!");
+                // เพิ่ม orderOutput ไปยัง orderInCounters ของ OrderServe
+                orderServe.orderInCounters.Add(orderOutput);
+
+                // เพิ่ม GameObject ของ Order ไปยัง currentOrderObjs ของ OrderServe
+                orderServe.currentOrderObjs.Add(newOrder);
+
+                // ล้างวัตถุดิบทั้งหมด
+                ClearCurrentRecipe();
+
+                Debug.Log("สร้าง Order: " + orderOutput.orderName + " และล้างวัตถุดิบทั้งหมด!");
+            }
+            else
+            {
+                Debug.LogWarning("ไม่สามารถผสมสูตรได้: ตำแหน่งปล่อย Order เต็ม!");
+            }
         }
         else
         {

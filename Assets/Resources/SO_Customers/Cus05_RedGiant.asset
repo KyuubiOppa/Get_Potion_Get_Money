@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c029c8985c9f8468cc3bd7be8c49e0, type: 3}
   m_Name: Cus05_RedGiant
   m_EditorClassIdentifier: 
+  customerPrefab: {fileID: 3317203309845981973, guid: d6e319f9315845a47bf518a42608d6b3,
+    type: 3}
   customerName: Red Giant
   customerID: Cus_05
   customerSmile: {fileID: 21300000, guid: d46b9fe64955f6342bd59f67f72627f0, type: 3}

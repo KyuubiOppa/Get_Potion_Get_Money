@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c029c8985c9f8468cc3bd7be8c49e0, type: 3}
   m_Name: Cus04_Tea
   m_EditorClassIdentifier: 
+  customerPrefab: {fileID: 607900803804146072, guid: 27178f60ecf7518429e83ec9fbf7b4b1,
+    type: 3}
   customerName: Tea
   customerID: Cus_04
   customerSmile: {fileID: 21300000, guid: f67559efcf9bd7a468dcf38033629b65, type: 3}

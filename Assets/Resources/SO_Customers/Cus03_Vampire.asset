@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c029c8985c9f8468cc3bd7be8c49e0, type: 3}
   m_Name: Cus03_Vampire
   m_EditorClassIdentifier: 
+  customerPrefab: {fileID: 7890416026646816423, guid: bba5fe707f58f234e83e2597736c5961,
+    type: 3}
   customerName: Vampire
   customerID: Cus_03
   customerSmile: {fileID: 21300000, guid: 208a4651a49becd4d980724983822c12, type: 3}
