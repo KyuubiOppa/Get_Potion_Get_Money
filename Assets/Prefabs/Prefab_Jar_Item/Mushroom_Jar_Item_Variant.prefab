@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 9050630610449402736, guid: 57164583d0bb6b247a04d600d7ae1b3f,
         type: 3}
       propertyPath: m_Name
-      value: Jar_Item_Mushroom Variant
+      value: Mushroom_Jar_Item_Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -75,8 +75,45 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7095611543886856825}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9050630610449402736, guid: 57164583d0bb6b247a04d600d7ae1b3f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7157896366703475320}
   m_SourcePrefab: {fileID: 100100000, guid: 57164583d0bb6b247a04d600d7ae1b3f, type: 3}
+--- !u!1 &4025124592310247513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9050630610449402736, guid: 57164583d0bb6b247a04d600d7ae1b3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5352055277410216745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &7157896366703475320
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4025124592310247513}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &4366184661423438563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8561796139994403274, guid: 57164583d0bb6b247a04d600d7ae1b3f,
