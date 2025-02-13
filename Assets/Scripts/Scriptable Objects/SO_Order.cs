@@ -14,9 +14,22 @@ public class SO_Order : ScriptableObject
 
     [Header("==== Order Potion Recipe ====")]
     public SO_Recipe[] recipes;
+
+    public bool isPotionType = false;
+    public ColorPotion colorPotion;
 }
 public enum OrderType
 {
     Potion,
 
+}
+public enum ColorPotion
+{
+    red,
+    yellow,
+    blue,
+    purple,
+    green,
+    orange,
+    brown
 }

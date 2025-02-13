@@ -9,7 +9,7 @@ public class Customer_Movement : MonoBehaviour
     public Transform target; // เป้าหมายที่ลูกค้าจะไป
 
     public Customer customer;
-
+    public bool hasReachedHoldPoint = false;
     void Start()
     {
         customer = GetComponent<Customer>();
@@ -19,6 +19,12 @@ public class Customer_Movement : MonoBehaviour
     void Update()
     {
         MoveTowardsTarget();
+
+        // ตรวจสอบว่าลูกค้าเดินมาถึงจุด HoldPoint หรือยัง
+        if (!hasReachedHoldPoint && target != null && Vector3.Distance(transform.position, target.position) < 0.1f)
+        {
+            hasReachedHoldPoint = true;
+        }
 
         // ถ้าเป้าหมายคือจุดออก และถึงจุดนั้นแล้ว
         if (target == CustomerManager.Instance.customerExitPoint && Vector3.Distance(transform.position, target.position) < 0.1f)

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 4104923477256076261, guid: 0c6d76f16be47794885100dff3b4ace7,
     type: 3}
-  customerName: Werewolf
   customerID: Cus_02
-  customerSmile: {fileID: 21300000, guid: 310f011c4805e444b9a524b531b1558e, type: 3}
-  customerTight: {fileID: 21300000, guid: 310f011c4805e444b9a524b531b1558e, type: 3}
-  customerAngry: {fileID: 21300000, guid: 310f011c4805e444b9a524b531b1558e, type: 3}
+  customerName: Werewolf
+  customerPatience: 100
+  customerSmile: {fileID: 21300000, guid: d502a05edf4b61f45bb115a444cfe244, type: 3}
+  customerTight: {fileID: 21300000, guid: 114979e6e582b6245b19e82c37653c77, type: 3}
+  customerAngry: {fileID: 21300000, guid: de577e6276d180345a56e2d1e3d62b47, type: 3}

@@ -9,14 +9,25 @@ public class Customer : MonoBehaviour
 {
     public SO_Customer customerData;
 
+    [Header("==== ความอดทน ====")]
+    public CustomerEmotional customerEmotional = CustomerEmotional.Happy;
+    public float patience;
+
     [Header("==== Orders ====")]
     int maxOrder = 4; // จำนวนคำสั่งซื้อสูงสุด
     public SO_Order[] orders; // รายการอาหารที่ลูกค้าสั่ง
     public int orderPrices; // รวมราคา Order ที่ลูกค้าสั่ง
     [SerializeField] private OrderServe orderServe; // อ้างอิงถึง OrderServe
+
+    Customer_Movement customer_Movement;
+
     void Start()
     {
+        customer_Movement = GetComponent<Customer_Movement>();
+
         orderServe = FindObjectOfType<OrderServe>();
+
+        patience = customerData.customerPatience;
 
         RandomOrder(); // สุ่มคำสั่งซื้อเมื่อเริ่มต้น
         CalculateOrderPrices();
@@ -24,8 +35,30 @@ public class Customer : MonoBehaviour
 
     void Update()
     {
-        // อัปเดตตามความต้องการ
+        if (customer_Movement.hasReachedHoldPoint)
+        {
+            PatienceCountdown();
+        }
     }
+
+    public void PatienceCountdown()
+    {
+        // ลดความอดทนตามเวลา
+        patience -= Time.deltaTime;
+        patience = Mathf.Clamp(patience, 0, customerData.customerPatience);
+
+        // ตรวจสอบว่าความอดทนหมดหรือไม่
+        if (patience <= 0)
+        {
+            // เดินไปยังจุดออก
+            Customer_Movement movement = GetComponent<Customer_Movement>();
+            if (movement != null)
+            {
+                movement.MoveToExit();
+            }
+        }
+    }
+
 
 /// <summary>
 /// คำนวนราคา Order ที่สั่ง

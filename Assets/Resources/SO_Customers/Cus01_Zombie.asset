@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 6656884119406215648, guid: 85ab6846adc681149949a72f7162e29d,
     type: 3}
-  customerName: Zombie
   customerID: Cus_01
-  customerSmile: {fileID: 21300000, guid: ac4a07bba2ee5cf49b5ceaca5130f23e, type: 3}
-  customerTight: {fileID: 21300000, guid: ac4a07bba2ee5cf49b5ceaca5130f23e, type: 3}
-  customerAngry: {fileID: 21300000, guid: ac4a07bba2ee5cf49b5ceaca5130f23e, type: 3}
+  customerName: Zombie
+  customerPatience: 60
+  customerSmile: {fileID: 21300000, guid: 48e046e8bf17fec449d92f9f5348d796, type: 3}
+  customerTight: {fileID: 21300000, guid: 926d5bbebb637e1449b9c8ceda2dcf0c, type: 3}
+  customerAngry: {fileID: 21300000, guid: aceb61e70e29fc243bd28bc4ca0d79b0, type: 3}

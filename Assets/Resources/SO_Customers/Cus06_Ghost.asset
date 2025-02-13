@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 7089094803478681717, guid: 72c466247549cbe4db0b622487b0b7c5,
     type: 3}
-  customerName: Ghost
   customerID: Cus_06
-  customerSmile: {fileID: 21300000, guid: e73c852d0ee49e74693494ffd5d25732, type: 3}
-  customerTight: {fileID: 21300000, guid: e73c852d0ee49e74693494ffd5d25732, type: 3}
-  customerAngry: {fileID: 21300000, guid: e73c852d0ee49e74693494ffd5d25732, type: 3}
+  customerName: Ghost
+  customerPatience: 60
+  customerSmile: {fileID: 21300000, guid: 3a6574eac9a7dcc46b3e94d42cd76cdb, type: 3}
+  customerTight: {fileID: 21300000, guid: 43edd3d7a2edb4b4182b70204151c546, type: 3}
+  customerAngry: {fileID: 21300000, guid: adf032e5b3b2f6445a54871855018304, type: 3}

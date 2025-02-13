@@ -22,6 +22,8 @@ public class Customer_UI : MonoBehaviour
     void Update()
     {
         UpdateOrderUI();
+        PatienceSlider();
+        CustomerEmotional();
     }
 
     /// <summary>
@@ -49,6 +51,47 @@ public class Customer_UI : MonoBehaviour
                 // ปิดใช้งาน Image ถ้าไม่มี Order
                 orderImages[i].enabled = false;
             }
+        }
+    }
+
+/// <summary>
+/// อัพเดตหลอดความอดทน
+/// </summary>
+    public void PatienceSlider()
+    {
+        patienceSlider.maxValue = customer.customerData.customerPatience;
+        patienceSlider.value = customer.patience;
+    }
+
+/// <summary>
+/// อัปเดต Sprite ของลูกค้าตามความอดทนที่เหลือ
+/// </summary>
+    public void CustomerEmotional()
+    {
+        if (customer == null || customer.customerData == null || customerSpriteRenderer == null)
+        {
+            Debug.LogWarning("Customer, customerData, หรือ customerSpriteRenderer ไม่ถูกกำหนด");
+            return;
+        }
+
+        // คำนวณเปอร์เซ็นต์ความอดทนที่เหลือ
+        float patiencePercentage = (customer.patience / customer.customerData.customerPatience) * 100;
+
+        // กำหนด Sprite ตามเปอร์เซ็นต์ความอดทน
+        if (patiencePercentage > 66)
+        {
+            customerSpriteRenderer.sprite = customer.customerData.customerSmile; // ยิ้ม
+            customer.customerEmotional = global::CustomerEmotional.Happy;
+        }
+        else if (patiencePercentage > 33)
+        {
+            customerSpriteRenderer.sprite = customer.customerData.customerTight; // เครียด
+            customer.customerEmotional = global::CustomerEmotional.Normal;
+        }
+        else
+        {
+            customerSpriteRenderer.sprite = customer.customerData.customerAngry; // โกรธ
+            customer.customerEmotional = global::CustomerEmotional.Angry;
         }
     }
 }
