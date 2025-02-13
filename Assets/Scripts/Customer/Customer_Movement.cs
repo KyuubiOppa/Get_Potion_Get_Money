@@ -7,16 +7,28 @@ public class Customer_Movement : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public Transform target; // เป้าหมายที่ลูกค้าจะไป
-    public List<Customer_Movement> customersInQueue = new List<Customer_Movement>(); // ลูกค้าที่อยู่ในคิว
+
+    public Customer customer;
 
     void Start()
     {
+        customer = GetComponent<Customer>();
         FindAvailableTarget(); // ค้นหาเป้าหมายที่ว่างเมื่อเริ่มเกม
     }
 
     void Update()
     {
         MoveTowardsTarget();
+
+        // ถ้าเป้าหมายคือจุดออก และถึงจุดนั้นแล้ว
+        if (target == CustomerManager.Instance.customerExitPoint && Vector3.Distance(transform.position, target.position) < 0.1f)
+        {
+            // ทำลายตัวเอง
+            Destroy(gameObject);
+
+            // เรียกใช้การสปอว์นลูกค้าใหม่
+            CustomerManager.Instance.SpawnNextCustomer();
+        }
     }
 
     /// <summary>
@@ -53,5 +65,13 @@ public class Customer_Movement : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
+    }
+
+    /// <summary>
+    /// เดินไปยังจุดออก
+    /// </summary>
+    public void MoveToExit()
+    {
+        target = CustomerManager.Instance.customerExitPoint;
     }
 }

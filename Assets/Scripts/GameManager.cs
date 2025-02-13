@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public int playerMoney = 0;
 
     void Awake()
     {
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

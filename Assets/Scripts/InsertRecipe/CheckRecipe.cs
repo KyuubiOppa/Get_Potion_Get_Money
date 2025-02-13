@@ -115,16 +115,27 @@ public class CheckRecipe : MonoBehaviour
                 // สร้าง Order Prefab และกำหนดให้เป็นลูกของ selectedDropPoint
                 GameObject newOrder = Instantiate(orderOutput.orderPrefab, selectedDropPoint.position, Quaternion.identity, selectedDropPoint);
 
-                // เพิ่ม orderOutput ไปยัง orderInCounters ของ OrderServe
-                orderServe.orderInCounters.Add(orderOutput);
+                // ดึงคอมโพเนนต์ Order_Object จาก GameObject ที่สร้างขึ้น
+                Order_Object orderObject = newOrder.GetComponent<Order_Object>();
 
-                // เพิ่ม GameObject ของ Order ไปยัง currentOrderObjs ของ OrderServe
-                orderServe.currentOrderObjs.Add(newOrder);
+                if (orderObject != null)
+                {
+                    // เพิ่ม orderOutput ไปยัง orderInCounters ของ OrderServe
+                    orderServe.orderInCounters.Add(orderOutput);
 
-                // ล้างวัตถุดิบทั้งหมด
-                ClearCurrentRecipe();
+                    // เพิ่ม Order_Object ไปยัง currentOrderObjs ของ OrderServe
+                    orderServe.AddOrderObjectInTable();
 
-                Debug.Log("สร้าง Order: " + orderOutput.orderName + " และล้างวัตถุดิบทั้งหมด!");
+                    // ล้างวัตถุดิบทั้งหมด
+                    ClearCurrentRecipe();
+
+                    Debug.Log("สร้าง Order: " + orderOutput.orderName + " และล้างวัตถุดิบทั้งหมด!");
+                }
+                else
+                {
+                    Debug.LogWarning("ไม่พบคอมโพเนนต์ Order_Object ใน Order Prefab!");
+                    Destroy(newOrder); // ทำลาย GameObject หากไม่มี Order_Object
+                }
             }
             else
             {

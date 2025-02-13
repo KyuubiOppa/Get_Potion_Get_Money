@@ -23,7 +23,7 @@ public class Bin_Interact : MonoBehaviour, IInteractable
     public void Interact()
     {
         checkRecipe.ClearCurrentRecipe();
-        orderServe.ClearCurrentOrderServe();
+        orderServe.ClearCurrentOrderServeAll();
         Debug.Log("ทิ้งขยะ");
     }
 

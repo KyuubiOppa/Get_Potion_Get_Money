@@ -50,7 +50,10 @@ public class CustomerManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// ปล่อยลูกค้าตอนเริ่มเกม
     /// </summary>
+    /// <returns></returns>
     public IEnumerator StartCustomerSpawn()
     {
         if (randomCustomers.Length == 0 || customerSpawnPoint == null)
@@ -70,6 +73,27 @@ public class CustomerManager : MonoBehaviour
                 // รอระยะเวลาห่างก่อนสร้างลูกค้าตัวต่อไป
                 yield return new WaitForSeconds(spawnInterval);
             }
+        }
+    }
+
+    /// <summary>
+    /// ปล่อยลูกค้าใหม่เพียงตัวเดียว
+    /// </summary>
+    public void SpawnNextCustomer()
+    {
+        if (randomCustomers.Length == 0 || customerSpawnPoint == null)
+        {
+            Debug.LogWarning("ไม่มีข้อมูลลูกค้าหรือจุดเกิดลูกค้า");
+            return;
+        }
+
+        // สุ่มลูกค้าใหม่
+        SO_Customer randomCustomer = GetRandomCustomer();
+        if (randomCustomer != null)
+        {
+            GameObject newCustomer = Instantiate(randomCustomer.customerPrefab, customerSpawnPoint.position, Quaternion.identity);
+            spawnedCustomers.Add(newCustomer);
+            Debug.Log("สปอว์นลูกค้าใหม่: " + randomCustomer.name);
         }
     }
 
@@ -108,7 +132,6 @@ public class CustomerManager : MonoBehaviour
         foreach (var customer in randomCustomers)
         {
             customer.customerRate = Random.Range(0.1f, 1f); // สุ่มค่า customerRate ระหว่าง 0 ถึง 1
-            Debug.Log("สุ่ม customerRate ของ " + customer.so_Customer.name + " เป็น " + customer.customerRate);
         }
     }
 
@@ -120,7 +143,6 @@ public class CustomerManager : MonoBehaviour
         foreach (var customerSpecial in randomCustomerSpecials)
         {
             customerSpecial.customerRate = Random.Range(0.1f, 1f); // สุ่มค่า customerRate ระหว่าง 0 ถึง 1
-            Debug.Log("สุ่ม customerRate ของ " + customerSpecial.so_Customer_Special.name + " เป็น " + customerSpecial.customerRate);
         }
     }
 }
