@@ -10,7 +10,7 @@ public class TimeManager : MonoBehaviour
     public float dayDuration = 300f; // ระยะเวลา 1 วัน (หน่วย: วินาที)
 
     // ตัวแปรเก็บเวลาในเกมที่อิงกับ Time.deltaTime (ขึ้นกับ Time.timeScale)
-    [SerializeField] private float currentGameTime = 0f;
+    public float currentGameTime = 0f;
 
     // ตัวแปรเก็บเวลาจริงที่อิงกับ Time.unscaledDeltaTime (ไม่ขึ้นกับ Time.timeScale)
     [SerializeField] private float currentRealTime = 0f;

@@ -10,8 +10,14 @@ public class Customer_UI : MonoBehaviour
     public SpriteRenderer customerSpriteRenderer; // แสดงรูปลูกค้า
     public Image[] orderImages; // แสดงรูป Order ที่ลูกค้าสั่ง
     public Slider patienceSlider; // แสดงความอดทนของลูกค้า
+    [Header("Emotional Image")]
+    public Image emotionImage;
+    public Sprite happyIcon;
+    public Sprite normalIcon;
+    public Sprite angryIcon;
 
-    public Customer customer;
+
+    Customer customer;
 
     void Start()
     {
@@ -81,16 +87,19 @@ public class Customer_UI : MonoBehaviour
         if (patiencePercentage > 66)
         {
             customerSpriteRenderer.sprite = customer.customerData.customerSmile; // ยิ้ม
+            emotionImage.sprite = happyIcon;
             customer.customerEmotional = global::CustomerEmotional.Happy;
         }
         else if (patiencePercentage > 33)
         {
             customerSpriteRenderer.sprite = customer.customerData.customerTight; // เครียด
+            emotionImage.sprite = normalIcon;
             customer.customerEmotional = global::CustomerEmotional.Normal;
         }
         else
         {
             customerSpriteRenderer.sprite = customer.customerData.customerAngry; // โกรธ
+            emotionImage.sprite = angryIcon;
             customer.customerEmotional = global::CustomerEmotional.Angry;
         }
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   customerID: Cus_01
   customerName: Zombie
-  customerPatience: 60
+  customerPatience: 300
   customerSmile: {fileID: 21300000, guid: 48e046e8bf17fec449d92f9f5348d796, type: 3}
   customerTight: {fileID: 21300000, guid: 926d5bbebb637e1449b9c8ceda2dcf0c, type: 3}
   customerAngry: {fileID: 21300000, guid: aceb61e70e29fc243bd28bc4ca0d79b0, type: 3}
