@@ -20,14 +20,19 @@ public class Customer : MonoBehaviour
     [SerializeField] private OrderServe orderServe; // อ้างอิงถึง OrderServe
 
     Customer_Movement customer_Movement;
+    Customer_UI customer_UI;
 
     void Start()
     {
+        customer_UI = GetComponent<Customer_UI>();
         customer_Movement = GetComponent<Customer_Movement>();
 
         orderServe = FindObjectOfType<OrderServe>();
 
         patience = customerData.customerPatience;
+
+        customer_UI.customerCanvas.SetActive(false);
+        customer_UI.customerSpriteRenderer.sortingOrder = -1;
 
         RandomOrder(); // สุ่มคำสั่งซื้อเมื่อเริ่มต้น
         CalculateOrderPrices();
@@ -41,6 +46,7 @@ public class Customer : MonoBehaviour
         }
     }
 
+#region ความอดทน
     public void PatienceCountdown()
     {
         // ลดความอดทนตามเวลา
@@ -51,14 +57,12 @@ public class Customer : MonoBehaviour
         if (patience <= 0)
         {
             // เดินไปยังจุดออก
-            Customer_Movement movement = GetComponent<Customer_Movement>();
-            if (movement != null)
-            {
-                movement.MoveToExit();
-            }
+            customer_Movement.MoveToExit();
         }
     }
+#endregion
 
+#region คำนวนราคา Order ที่สั่ง & จ่ายตัง
 
 /// <summary>
 /// คำนวนราคา Order ที่สั่ง
@@ -80,6 +84,20 @@ public class Customer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// จ่ายเงินให้ผู้เล่น
+    /// </summary>
+    private void PayToPlayer()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.playerMoney += orderPrices; // เพิ่มเงินให้ผู้เล่นตามราคารวมของออเดอร์
+            Debug.Log("ลูกค้าจ่ายเงินให้ผู้เล่น: " + orderPrices + " บาท");
+        }
+    }
+#endregion
+
+#region สุ่ม Order & รับ Order
     /// <summary>
     /// สุ่มจำนวนคำสั่งซื้อและรายการอาหาร
     /// </summary>
@@ -145,15 +163,7 @@ public class Customer : MonoBehaviour
             // ตรวจสอบว่าออเดอร์ทั้งหมดถูกเสิร์ฟครบหรือไม่
             if (IsAllOrdersServed())
             {
-                // จ่ายเงินให้ผู้เล่น
-                PayToPlayer();
-
-                // เดินไปยังจุดออก
-                Customer_Movement movement = GetComponent<Customer_Movement>();
-                if (movement != null)
-                {
-                    movement.MoveToExit();
-                }
+                IsGetAllOrders();
             }
         }
     }
@@ -173,17 +183,25 @@ public class Customer : MonoBehaviour
         return true; // ถ้าออเดอร์ทั้งหมดถูกเสิร์ฟครบ
     }
 
-    /// <summary>
-    /// จ่ายเงินให้ผู้เล่น
-    /// </summary>
-    private void PayToPlayer()
+/// <summary>
+/// ถ้าเก็บ Order ครบแล้ว
+/// </summary>
+    void IsGetAllOrders()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.playerMoney += orderPrices; // เพิ่มเงินให้ผู้เล่นตามราคารวมของออเดอร์
-            Debug.Log("ลูกค้าจ่ายเงินให้ผู้เล่น: " + orderPrices + " บาท");
-        }
+        // ทำให้ตัวละครอยู่ด้านหลัง
+        customer_UI.customerSpriteRenderer.sortingOrder = -1;
+        // ปิด Canvas
+        customer_UI.customerCanvas.SetActive(false);
+        
+
+        // จ่ายเงินให้ผู้เล่น
+        PayToPlayer();
+
+        // เดินไปยังจุดออก
+        customer_Movement.MoveToExit();
     }
+
+#endregion
 
 #region ลดรายการ Order
 

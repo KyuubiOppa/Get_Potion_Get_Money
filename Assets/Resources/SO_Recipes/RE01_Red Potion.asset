@@ -15,5 +15,6 @@ MonoBehaviour:
   recipeID: RE01
   recipeName: Red Potion
   recipeSprite: {fileID: 21300000, guid: 5ec8ee915af164b44a1d0e236fc59cb3, type: 3}
-  recipePrefab: {fileID: 5887708664602410553, guid: 2ade1f8c4c033314dbe7b0ca930da07c,
+  recipePrefab: {fileID: 8191395783934185194, guid: e5fb1f50494595e42a182949c143c812,
     type: 3}
+  colorPotion: 1

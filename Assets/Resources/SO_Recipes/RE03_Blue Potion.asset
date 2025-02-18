@@ -15,5 +15,6 @@ MonoBehaviour:
   recipeID: RE03
   recipeName: Blue Potion
   recipeSprite: {fileID: 21300000, guid: 9edbc61197d00494c884ca17b43c7bee, type: 3}
-  recipePrefab: {fileID: 3475781664411880860, guid: 6c3917461746893479e94598bdab7dcc,
+  recipePrefab: {fileID: 8191395783934185194, guid: e5fb1f50494595e42a182949c143c812,
     type: 3}
+  colorPotion: 3

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ce338e4aae6fe4698d10ba57ded1c9, type: 3}
   m_Name: RE09_Feather
   m_EditorClassIdentifier: 
+  recipeType: 1
   recipeID: RE09
   recipeName: Feather
   recipeSprite: {fileID: 21300000, guid: 3b0ec5ca6f8cf0041aced6546269b65f, type: 3}
   recipePrefab: {fileID: 7013301113985522677, guid: 62cf06c5c6989fd4e96075b865a2a3fd,
     type: 3}
+  colorPotion: 0

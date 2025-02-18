@@ -15,5 +15,6 @@ MonoBehaviour:
   recipeID: RE02
   recipeName: Yellow Potion
   recipeSprite: {fileID: 21300000, guid: 04c752eec75ec774aa4bcb14b14f1613, type: 3}
-  recipePrefab: {fileID: 6380269757784190548, guid: 27860ae82bda4ee488702e5fa823c8ef,
+  recipePrefab: {fileID: 8191395783934185194, guid: e5fb1f50494595e42a182949c143c812,
     type: 3}
+  colorPotion: 2

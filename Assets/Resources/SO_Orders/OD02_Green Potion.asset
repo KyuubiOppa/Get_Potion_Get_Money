@@ -22,5 +22,4 @@ MonoBehaviour:
   recipes:
   - {fileID: 11400000, guid: 3907cc6c1a44f7f4ea12bbe4325583ae, type: 2}
   - {fileID: 11400000, guid: 20ed34ff316846b448e95b218d9df800, type: 2}
-  isPotionType: 1
-  colorPotion: 4
+  colorPotion: 5

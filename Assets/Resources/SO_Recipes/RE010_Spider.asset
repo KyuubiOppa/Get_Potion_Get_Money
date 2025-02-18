@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ce338e4aae6fe4698d10ba57ded1c9, type: 3}
   m_Name: RE010_Spider
   m_EditorClassIdentifier: 
+  recipeType: 1
   recipeID: RE010
   recipeName: Spider
   recipeSprite: {fileID: 21300000, guid: 98221be64c375a04cbdf14536dbc44a2, type: 3}
   recipePrefab: {fileID: 1856483008093804781, guid: 8f58bb1d31d67c64c92be16c8a084b71,
     type: 3}
+  colorPotion: 0

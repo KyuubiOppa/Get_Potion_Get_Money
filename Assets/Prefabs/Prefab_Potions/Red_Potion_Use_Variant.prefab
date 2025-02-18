@@ -101,10 +101,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6085669680445462292}
-    - targetCorrespondingSourceObject: {fileID: 8673522756491563309, guid: ce71cd1a07adb494087b2e4c394183f5,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5351995163989233835}
   m_SourcePrefab: {fileID: 100100000, guid: ce71cd1a07adb494087b2e4c394183f5, type: 3}
 --- !u!1 &5887708664602410553 stripped
 GameObject:
@@ -139,24 +135,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &5903243820462538299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8673522756491563309, guid: ce71cd1a07adb494087b2e4c394183f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3004466119739322134}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5351995163989233835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5903243820462538299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34946d78e3ac844f991fd226e1445db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxWobble: 0.03
-  WobbleSpeed: 1
-  Recovery: 1

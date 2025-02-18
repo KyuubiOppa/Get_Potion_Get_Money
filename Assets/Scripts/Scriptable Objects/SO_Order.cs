@@ -15,7 +15,7 @@ public class SO_Order : ScriptableObject
     [Header("==== Order Potion Recipe ====")]
     public SO_Recipe[] recipes;
 
-    public bool isPotionType = false;
+    [Header("==== สีของ Order น้ำยา ====")]
     public ColorPotion colorPotion;
 }
 public enum OrderType
@@ -25,11 +25,13 @@ public enum OrderType
 }
 public enum ColorPotion
 {
+    NoColor,
     red,
     yellow,
     blue,
     purple,
     green,
     orange,
-    brown
+    brown,
+    black
 }

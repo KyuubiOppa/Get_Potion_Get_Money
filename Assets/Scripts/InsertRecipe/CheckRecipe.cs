@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CheckRecipe : MonoBehaviour
 {
-    public Transform recipeDropPoint; // ตำแหน่งปล่อยวัตถุดิบลงมา
+    public Transform recipe_Potion_DropPoint; // ตำแหน่งปล่อยวัตถุดิบประเภทน้ำยา
+    public Transform recipe_PotionTopping_DropPoint; // ตำแหน่งปล่อยวัตถุดิบประเภทท็อปปิ้งน้ำยา
     [Header("Order ที่สร้างขึ้นหากสูตรถูกต้อง")]
     public SO_Order orderOutput; // Order ที่สร้างขึ้นหากสูตรถูกต้อง
 
@@ -13,10 +14,12 @@ public class CheckRecipe : MonoBehaviour
     public SO_Order[] so_Orders; // สูตรของ Order ที่ถูกต้อง
     [Header("วัตถุดิบที่ถูกใส่ในหม้อปรุงยาในปัจจุบัน")]
     public List<SO_Recipe> currentRecipes = new List<SO_Recipe>(); // วัตถุดิบที่ถูกใส่ในหม้อปรุงยาในปัจจุบัน
-
     public List<GameObject> currentRecipeObjs = new List<GameObject>();
 
+
     public OrderServe orderServe;
+
+    public MeshRenderer waterInWitchPot;
 
     void Start()
     {
@@ -39,12 +42,15 @@ public class CheckRecipe : MonoBehaviour
             if (IsRecipeMatch(order.recipes)) // ตรวจสอบว่าสูตรตรงกันหรือไม่
             {
                 orderOutput = order; // กำหนดสูตรที่ตรงให้เป็น orderOutput
+                ParticleEffectManager.Instance.ChangeWaterColor(orderOutput.colorPotion, waterInWitchPot);
                 return; // หยุดการทำงานหลังจากเจอสูตรที่ตรงกัน
             }
         }
 
         // ถ้าไม่พบสูตรที่ตรงกัน
         orderOutput = null;
+        UpdateWaterColorBasedOnIngredients();
+
         //Debug.LogWarning("ไม่มีสูตรที่ตรงกัน!");
     }
 
@@ -145,6 +151,46 @@ public class CheckRecipe : MonoBehaviour
         else
         {
             Debug.LogWarning("ไม่สามารถผสมสูตรได้: ไม่มีสูตรที่ถูกต้องหรือตำแหน่ง Output ไม่ถูกต้อง!");
+        }
+    }
+
+    /// <summary>
+    /// อัพเดตสีน้ำในหม้อตามวัตถุดิบที่ถูกใส่ลงไป
+    /// </summary>
+    private void UpdateWaterColorBasedOnIngredients()
+    {
+        // ตรวจสอบว่ามีวัตถุดิบประเภทน้ำยาในหม้อหรือไม่
+        List<SO_Recipe> potionRecipes = currentRecipes.Where(recipe => recipe.recipeType == RecipeType.Potion).ToList();
+
+        if (potionRecipes.Count == 0)
+        {
+            // ถ้าไม่มีวัตถุดิบประเภทน้ำยา ให้ตั้งสีน้ำเป็น NoColor
+            ParticleEffectManager.Instance.ChangeWaterColor(ColorPotion.NoColor, waterInWitchPot);
+            return;
+        }
+
+        // ตรวจสอบว่ามีการผสมสีแดงและน้ำเงินหรือไม่
+        bool hasRed = potionRecipes.Any(recipe => recipe.colorPotion == ColorPotion.red);
+        bool hasBlue = potionRecipes.Any(recipe => recipe.colorPotion == ColorPotion.blue);
+
+        // ถ้ามีสีแดงและน้ำเงิน และมีสีอื่นเพิ่มเข้ามา ให้เปลี่ยนสีน้ำเป็นสีดำ
+        if (hasRed && hasBlue && potionRecipes.Count > 2)
+        {
+            ParticleEffectManager.Instance.ChangeWaterColor(ColorPotion.black, waterInWitchPot);
+            return;
+        }
+
+        // ถ้ามีเพียงสีเดียว ให้ใช้สีนั้น
+        if (potionRecipes.Count == 1)
+        {
+            ParticleEffectManager.Instance.ChangeWaterColor(potionRecipes[0].colorPotion, waterInWitchPot);
+            return;
+        }
+
+        // ถ้ามีการผสมสีอื่นที่ไม่ใช่แดงและน้ำเงิน ให้เปลี่ยนสีน้ำเป็นดำ
+        if (potionRecipes.Count > 1)
+        {
+            ParticleEffectManager.Instance.ChangeWaterColor(ColorPotion.black, waterInWitchPot);
         }
     }
 }

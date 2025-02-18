@@ -385,14 +385,14 @@ RectTransform:
   m_GameObject: {fileID: 2689011267219641124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35423976, y: 0.35423976, z: 0.35423976}
+  m_LocalScale: {x: 0.43564406, y: 0.43564406, z: 0.43564406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6889319360754120521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180.4, y: 51.3}
+  m_AnchoredPosition: {x: -19.9, y: 53.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8932641596392430877
@@ -833,6 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getOrderButton: {fileID: 2523175736828056636}
+  customerCanvas: {fileID: 2054806656813069695}
   customerSpriteRenderer: {fileID: 5125298608050283580}
   orderImages:
   - {fileID: 4774408735370723013}

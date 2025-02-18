@@ -7,27 +7,34 @@ using UnityEditor;
 [CustomEditor(typeof(SO_Recipe))]
 public class SO_RecipeEditor : Editor
 {
+    private SerializedProperty recipeTypeProp;
     private SerializedProperty recipeIDProp;
     private SerializedProperty recipeNameProp;
     private SerializedProperty recipeSpriteProp;
     private SerializedProperty recipePrefabProp;
 
+    private SerializedProperty recipColorPotionProp;
+
     private void OnEnable()
     {
+        recipeTypeProp = serializedObject.FindProperty("recipeType");
         recipeIDProp = serializedObject.FindProperty("recipeID");
         recipeNameProp = serializedObject.FindProperty("recipeName");
         recipeSpriteProp = serializedObject.FindProperty("recipeSprite");
         recipePrefabProp = serializedObject.FindProperty("recipePrefab");
+        recipColorPotionProp = serializedObject.FindProperty("colorPotion");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
 
+        EditorGUILayout.PropertyField(recipeTypeProp);
         EditorGUILayout.PropertyField(recipeIDProp);
         EditorGUILayout.PropertyField(recipeNameProp);
         EditorGUILayout.PropertyField(recipeSpriteProp);
         EditorGUILayout.PropertyField(recipePrefabProp);
+        EditorGUILayout.PropertyField(recipColorPotionProp);
 
         if (recipeSpriteProp.objectReferenceValue != null)
         {

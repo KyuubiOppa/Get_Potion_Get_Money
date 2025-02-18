@@ -8,11 +8,15 @@ public class Customer_Movement : MonoBehaviour
     public float moveSpeed = 2f;
     public Transform target; // เป้าหมายที่ลูกค้าจะไป
 
-    public Customer customer;
+    Customer customer;
+    Customer_UI customer_UI;
+
     public bool hasReachedHoldPoint = false;
     void Start()
     {
         customer = GetComponent<Customer>();
+        customer_UI = GetComponent<Customer_UI>();
+
         FindAvailableTarget(); // ค้นหาเป้าหมายที่ว่างเมื่อเริ่มเกม
     }
 
@@ -24,6 +28,8 @@ public class Customer_Movement : MonoBehaviour
         if (!hasReachedHoldPoint && target != null && Vector3.Distance(transform.position, target.position) < 0.1f)
         {
             hasReachedHoldPoint = true;
+            customer_UI.customerSpriteRenderer.sortingOrder = 0;
+            customer_UI.customerCanvas.SetActive(true);
         }
 
         // ถ้าเป้าหมายคือจุดออก และถึงจุดนั้นแล้ว
