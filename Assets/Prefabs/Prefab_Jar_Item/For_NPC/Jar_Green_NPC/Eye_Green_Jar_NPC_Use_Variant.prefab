@@ -165,11 +165,65 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6569261336173615049}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8656469088763371556}
+    - targetCorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4637082842014229035}
     - targetCorrespondingSourceObject: {fileID: 2427838480633783313, guid: 0b66d90b97761b9438480cd856367adb,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3286478205673005789}
   m_SourcePrefab: {fileID: 100100000, guid: 0b66d90b97761b9438480cd856367adb, type: 3}
+--- !u!1 &3954162818682087843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7915676462804305218}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &-8656469088763371556
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954162818682087843}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4637082842014229035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954162818682087843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db736db71dd7364fa205a1e244693c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_Order: {fileID: 11400000, guid: 66231f8b97ff3594f9abfba6a47dc4de, type: 2}
 --- !u!4 &4443876967697756953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5796681666629285467, guid: 0b66d90b97761b9438480cd856367adb,

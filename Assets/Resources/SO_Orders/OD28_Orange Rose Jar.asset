@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a275b33a86034347b240fefeb2ad396, type: 3}
+  m_Name: OD28_Orange Rose Jar
+  m_EditorClassIdentifier: 
+  orderType: 0
+  orderID: OD28
+  orderName: Orange Rose Jar
+  orderPrice: 40
+  orderSprite: {fileID: 21300000, guid: 024a0b682bcca2049a91ea536ca1e670, type: 3}
+  orderPrefab: {fileID: 8809899638219873261, guid: 92efbfc86d9583244b43ea4dd0cc3cfb,
+    type: 3}
+  recipes:
+  - {fileID: 11400000, guid: 9c0553289438ba347aa50240cbf9d101, type: 2}
+  - {fileID: 11400000, guid: 20ed34ff316846b448e95b218d9df800, type: 2}
+  - {fileID: 11400000, guid: fbd6ff0b7b34247479b0a7960c4c39ac, type: 2}
+  colorPotion: 6

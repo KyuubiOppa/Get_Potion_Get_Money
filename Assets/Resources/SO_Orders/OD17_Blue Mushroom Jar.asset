@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a275b33a86034347b240fefeb2ad396, type: 3}
-  m_Name: OD05_Purple Potion Eye
+  m_Name: OD17_Blue Mushroom Jar
   m_EditorClassIdentifier: 
   orderType: 0
-  orderID: OD05
-  orderName: Purple Potion
+  orderID: OD17
+  orderName: Blue Mushroom Jar
   orderPrice: 40
-  orderSprite: {fileID: 21300000, guid: 71c63e5e94701554db223550e0bafe84, type: 3}
-  orderPrefab: {fileID: 1544052797668616339, guid: 887da553e97a9da41a76f7f019e85ae5,
+  orderSprite: {fileID: 21300000, guid: e7eed08f29f16e04e9f0fb5655611c09, type: 3}
+  orderPrefab: {fileID: 7377245846451200812, guid: 20c264a371e36684d846431d9b35b84d,
     type: 3}
   recipes:
   - {fileID: 11400000, guid: 3907cc6c1a44f7f4ea12bbe4325583ae, type: 2}
-  - {fileID: 11400000, guid: 9c0553289438ba347aa50240cbf9d101, type: 2}
-  - {fileID: 11400000, guid: 3cfd54fb0cec0fa4187f4db4b5a15a95, type: 2}
-  colorPotion: 4
+  - {fileID: 11400000, guid: 2e2a92a786bd49a43944cde5348e007d, type: 2}
+  colorPotion: 3

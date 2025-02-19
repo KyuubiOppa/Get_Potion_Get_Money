@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a275b33a86034347b240fefeb2ad396, type: 3}
+  m_Name: OD19_Blue Spider Jar
+  m_EditorClassIdentifier: 
+  orderType: 0
+  orderID: OD19
+  orderName: Blue Spider Jar
+  orderPrice: 40
+  orderSprite: {fileID: 21300000, guid: e3113e4c3ed76d44998babf00b8c519c, type: 3}
+  orderPrefab: {fileID: 8125323026689584629, guid: 5a1d15c5f2348ba469632758b270df8a,
+    type: 3}
+  recipes:
+  - {fileID: 11400000, guid: 3907cc6c1a44f7f4ea12bbe4325583ae, type: 2}
+  - {fileID: 11400000, guid: af7767ee56791834482fcd335936ae39, type: 2}
+  colorPotion: 3

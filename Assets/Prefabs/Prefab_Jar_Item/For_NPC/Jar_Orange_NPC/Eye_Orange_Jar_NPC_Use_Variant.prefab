@@ -86,6 +86,14 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5224957684907251470}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2893833378715041746}
+    - targetCorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4249120658230668785}
     - targetCorrespondingSourceObject: {fileID: 2427838480633783313, guid: 0b66d90b97761b9438480cd856367adb,
         type: 3}
       insertIndex: -1
@@ -118,6 +126,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3942119975906713643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7894558172795456714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6573606119359737057, guid: 0b66d90b97761b9438480cd856367adb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3942119975906713643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2893833378715041746
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894558172795456714}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4249120658230668785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894558172795456714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db736db71dd7364fa205a1e244693c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  so_Order: {fileID: 11400000, guid: 66fe6aea88071ee4fb00eae3125da810, type: 2}
 --- !u!1001 &5694940446219137253
 PrefabInstance:
   m_ObjectHideFlags: 0

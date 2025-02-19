@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a275b33a86034347b240fefeb2ad396, type: 3}
+  m_Name: OD30_Purple Eye Jar
+  m_EditorClassIdentifier: 
+  orderType: 0
+  orderID: OD30
+  orderName: Purple Eye Jar
+  orderPrice: 40
+  orderSprite: {fileID: 21300000, guid: 0f45ef1765ff8294cbcc55c5b47d71c8, type: 3}
+  orderPrefab: {fileID: 1544052797668616339, guid: 887da553e97a9da41a76f7f019e85ae5,
+    type: 3}
+  recipes:
+  - {fileID: 11400000, guid: 9c0553289438ba347aa50240cbf9d101, type: 2}
+  - {fileID: 11400000, guid: 3907cc6c1a44f7f4ea12bbe4325583ae, type: 2}
+  - {fileID: 11400000, guid: 3cfd54fb0cec0fa4187f4db4b5a15a95, type: 2}
+  colorPotion: 4

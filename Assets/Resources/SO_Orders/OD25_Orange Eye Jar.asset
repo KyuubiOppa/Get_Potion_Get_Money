@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a275b33a86034347b240fefeb2ad396, type: 3}
+  m_Name: OD25_Orange Eye Jar
+  m_EditorClassIdentifier: 
+  orderType: 0
+  orderID: OD25
+  orderName: Orange Eye Jar
+  orderPrice: 40
+  orderSprite: {fileID: 21300000, guid: 3c5d84e51d005714da6cbcfef051bb0b, type: 3}
+  orderPrefab: {fileID: 7894558172795456714, guid: 94f1b712161f8864c9279c7cb649b08e,
+    type: 3}
+  recipes:
+  - {fileID: 11400000, guid: 9c0553289438ba347aa50240cbf9d101, type: 2}
+  - {fileID: 11400000, guid: 20ed34ff316846b448e95b218d9df800, type: 2}
+  - {fileID: 11400000, guid: 3cfd54fb0cec0fa4187f4db4b5a15a95, type: 2}
+  colorPotion: 6
