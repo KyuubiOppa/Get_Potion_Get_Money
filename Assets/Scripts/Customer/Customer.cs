@@ -56,8 +56,7 @@ public class Customer : MonoBehaviour
         // ตรวจสอบว่าความอดทนหมดหรือไม่
         if (patience <= 0)
         {
-            // เดินไปยังจุดออก
-            customer_Movement.MoveToExit();
+            IsTimeOut();
         }
     }
 #endregion
@@ -201,6 +200,19 @@ public class Customer : MonoBehaviour
         customer_Movement.MoveToExit();
     }
 
+/// <summary>
+/// ถ้าหมดเวลา
+/// </summary>
+    void IsTimeOut()
+    {
+        // ทำให้ตัวละครอยู่ด้านหลัง
+        customer_UI.customerSpriteRenderer.sortingOrder = -1;
+        // ปิด Canvas
+        customer_UI.customerCanvas.SetActive(false);
+
+        // เดินไปยังจุดออก
+        customer_Movement.MoveToExit();
+    }
 #endregion
 
 #region ลดรายการ Order
