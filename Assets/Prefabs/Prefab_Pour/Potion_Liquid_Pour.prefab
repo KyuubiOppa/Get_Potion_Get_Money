@@ -177,7 +177,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5acdc3d46b5b132409a2f760f16cef76,
         type: 3}
       propertyPath: m_Name
-      value: Potion_Liquid_Pour_ 1
+      value: Potion_Liquid_Pour
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023739485172818156, guid: 5acdc3d46b5b132409a2f760f16cef76,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1326508216053746521, guid: 5acdc3d46b5b132409a2f760f16cef76,
         type: 3}
@@ -217,7 +222,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2596428139869082149, guid: 5acdc3d46b5b132409a2f760f16cef76,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4529126631429593597}
+      addedObject: {fileID: 6636775722456315363}
   m_SourcePrefab: {fileID: 100100000, guid: 5acdc3d46b5b132409a2f760f16cef76, type: 3}
 --- !u!23 &1908272123298931114 stripped
 MeshRenderer:
@@ -231,7 +236,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9037817085128520635}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4529126631429593597
+--- !u!114 &6636775722456315363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6441444212955357598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a611ea88c168f1418a19e0a3fd792d8, type: 3}
+  m_Script: {fileID: 11500000, guid: d34946d78e3ac844f991fd226e1445db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxWobble: 0.03

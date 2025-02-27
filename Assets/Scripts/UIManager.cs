@@ -9,10 +9,19 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     public TMP_Text playerMoneyTMP;
-
-
     public TMP_Text timeTMP;
     public TMP_Text dayTMP;
+
+    [Header("Color Combo Canvas")]
+    public TMP_Text colorComboText;
+    [Header("Color")]
+    public Color red;
+    public Color yellow;
+    public Color blue;
+    public Color orange;
+    public Color green;
+    public Color purple;
+    public Color brown;
 
     void Awake()
     {
@@ -28,13 +37,14 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         PlayerMoney();
         DayAndTime();
+        UpdateColorComboText();
     }
 
     public void PlayerMoney()
@@ -63,5 +73,54 @@ public class UIManager : MonoBehaviour
         // อัปเดต UI
         timeTMP.text = timeString;
         dayTMP.text = "Day " + TimeManager.Instance.day.ToString();
+    }
+
+/// <summary>
+/// อัปเดตข้อความและสีของ colorComboText ตาม Combo ปัจจุบัน
+/// </summary>
+    private void UpdateColorComboText()
+    {
+        if (ColorComboManager.Instance != null)
+        {
+            // ตั้งค่าข้อความ Combo (เช่น "x1", "x2", "x3")
+            colorComboText.text = "x" + ColorComboManager.Instance.colorCombo;
+
+            // เปลี่ยนสีตัวอักษรตาม colorComboState
+            switch (ColorComboManager.Instance.colorComboState)
+            {
+                case ColorPotion.red:
+                    colorComboText.color = red;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.yellow:
+                    colorComboText.color = yellow;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.blue:
+                    colorComboText.color = blue;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.orange:
+                    colorComboText.color = orange;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.green:
+                    colorComboText.color = green;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.purple:
+                    colorComboText.color = purple;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                case ColorPotion.brown:
+                    colorComboText.color = brown;
+                    colorComboText.gameObject.SetActive(true);
+                    break;
+                default:
+                    colorComboText.color = Color.white; // สีเริ่มต้นหากไม่มีสีที่ตรงกัน
+                    colorComboText.gameObject.SetActive(false);
+                    break;
+            }
+        }
     }
 }

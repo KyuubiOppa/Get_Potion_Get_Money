@@ -16,6 +16,6 @@ MonoBehaviour:
   recipeID: RE04
   recipeName: Rose
   recipeSprite: {fileID: 21300000, guid: ee88d7e22aff16b46bbecf904a4fe3f7, type: 3}
-  recipePrefab: {fileID: 8819422015335047158, guid: 77ba6ba0c129a85469c9279f4a520ec9,
+  recipePrefab: {fileID: 5302563197985185820, guid: 764cfbe75f85ad34facb97a17c7960de,
     type: 3}
   colorPotion: 0

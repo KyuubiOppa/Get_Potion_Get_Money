@@ -28,7 +28,7 @@ public class Customer_Movement : MonoBehaviour
         if (!hasReachedHoldPoint && target != null && Vector3.Distance(transform.position, target.position) < 0.1f)
         {
             hasReachedHoldPoint = true;
-            customer_UI.customerSpriteRenderer.sortingOrder = 0;
+            customer_UI.customerSpriteRenderer.sortingOrder = 1;
             customer_UI.customerCanvas.SetActive(true);
         }
 

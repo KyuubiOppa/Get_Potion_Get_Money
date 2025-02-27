@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class Customer_UI : MonoBehaviour
 {
+    [Header("ปุ่มรับ Order")]
     public Button getOrderButton;
+
+    [Header("Canvas Ui ทั้งหมด")]
     public GameObject customerCanvas;
+    [Header("รูปตัวละคร")]
     public SpriteRenderer customerSpriteRenderer; // แสดงรูปลูกค้า
+    [Header("รูปรายการ Order ที่สั่ง")]
     public Image[] orderImages; // แสดงรูป Order ที่ลูกค้าสั่ง
+    [Header("หลอดความอดทน")]
     public Slider patienceSlider; // แสดงความอดทนของลูกค้า
+    
     [Header("Emotional Image")]
     public Image emotionImage;
     public Sprite happyIcon;

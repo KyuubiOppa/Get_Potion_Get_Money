@@ -32,7 +32,7 @@ public class Customer : MonoBehaviour
         patience = customerData.customerPatience;
 
         customer_UI.customerCanvas.SetActive(false);
-        customer_UI.customerSpriteRenderer.sortingOrder = -1;
+        customer_UI.customerSpriteRenderer.sortingOrder = 0;
 
         RandomOrder(); // สุ่มคำสั่งซื้อเมื่อเริ่มต้น
         CalculateOrderPrices();
@@ -90,7 +90,7 @@ public class Customer : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.playerMoney += orderPrices; // เพิ่มเงินให้ผู้เล่นตามราคารวมของออเดอร์
+            GameManager.Instance.playerMoney += orderPrices * ColorComboManager.Instance.colorCombo; // เพิ่มเงินให้ผู้เล่นตามราคารวมของออเดอร์
             Debug.Log("ลูกค้าจ่ายเงินให้ผู้เล่น: " + orderPrices + " บาท");
         }
     }
@@ -154,6 +154,14 @@ public class Customer : MonoBehaviour
 
                     // ทำลาย GameObject ที่เกี่ยวข้องกับออเดอร์ที่รับไปแล้ว
                     orderServe.DestroyOrderObjects(order);
+
+                    // เช็ค Combo ถ้า Order เป็นประเภท Potion
+                    if (order.orderType == OrderType.Potion)
+                    {
+                        ColorComboManager.Instance.IncreaseCombo(order.colorPotion);
+                        // สร้าง ColorCombo Canvas ใหม่ให้ลอยขึ้นมา
+                        Instantiate(ColorComboManager.Instance.colorComboCanvasPrefab, transform.position, Quaternion.identity);
+                    }
                 }
             }
 
@@ -188,7 +196,7 @@ public class Customer : MonoBehaviour
     void IsGetAllOrders()
     {
         // ทำให้ตัวละครอยู่ด้านหลัง
-        customer_UI.customerSpriteRenderer.sortingOrder = -1;
+        customer_UI.customerSpriteRenderer.sortingOrder = 0;
         // ปิด Canvas
         customer_UI.customerCanvas.SetActive(false);
         
@@ -206,7 +214,7 @@ public class Customer : MonoBehaviour
     void IsTimeOut()
     {
         // ทำให้ตัวละครอยู่ด้านหลัง
-        customer_UI.customerSpriteRenderer.sortingOrder = -1;
+        customer_UI.customerSpriteRenderer.sortingOrder = 0;
         // ปิด Canvas
         customer_UI.customerCanvas.SetActive(false);
 

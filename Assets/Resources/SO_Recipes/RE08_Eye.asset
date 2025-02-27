@@ -16,6 +16,6 @@ MonoBehaviour:
   recipeID: RE08
   recipeName: Eye
   recipeSprite: {fileID: 21300000, guid: 31e378453e93e3040bc4bb66bf3717d2, type: 3}
-  recipePrefab: {fileID: 9012779282143747680, guid: 1de3402516a8868439c40b916f05d456,
+  recipePrefab: {fileID: 3901738652504401526, guid: bcc404b196f046347b557b28274ee201,
     type: 3}
   colorPotion: 0

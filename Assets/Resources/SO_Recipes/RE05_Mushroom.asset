@@ -16,6 +16,6 @@ MonoBehaviour:
   recipeID: RE05
   recipeName: Mushroom
   recipeSprite: {fileID: 21300000, guid: 0fc69ddaebb346142a512584435c605f, type: 3}
-  recipePrefab: {fileID: 4025124592310247513, guid: 3ace36d4bfa0c1c4499f3a2cad2cf292,
+  recipePrefab: {fileID: 6968470187159310763, guid: 5f372543b5693624e985b4ec9b246358,
     type: 3}
   colorPotion: 0

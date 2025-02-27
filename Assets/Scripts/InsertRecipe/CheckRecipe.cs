@@ -164,8 +164,8 @@ public class CheckRecipe : MonoBehaviour
 
         if (potionRecipes.Count == 0)
         {
-            // ถ้าไม่มีวัตถุดิบประเภทน้ำยา ให้ตั้งสีน้ำเป็น NoColor
-            ParticleEffectManager.Instance.ChangeWaterColor(ColorPotion.NoColor, waterInWitchPot);
+            // ถ้าไม่มีวัตถุดิบประเภทน้ำยา ให้ตั้งสีน้ำเป็น สีดำ
+            ParticleEffectManager.Instance.ChangeWaterColor(ColorPotion.black, waterInWitchPot);
             return;
         }
 

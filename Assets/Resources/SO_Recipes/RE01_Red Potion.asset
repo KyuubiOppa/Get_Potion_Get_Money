@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ce338e4aae6fe4698d10ba57ded1c9, type: 3}
   m_Name: RE01_Red Potion
   m_EditorClassIdentifier: 
+  recipeType: 0
   recipeID: RE01
   recipeName: Red Potion
   recipeSprite: {fileID: 21300000, guid: 5ec8ee915af164b44a1d0e236fc59cb3, type: 3}
-  recipePrefab: {fileID: 8191395783934185194, guid: e5fb1f50494595e42a182949c143c812,
+  recipePrefab: {fileID: 974287940876797054, guid: e5c2e5e8f232a4a46817dc6853f585b6,
     type: 3}
   colorPotion: 1

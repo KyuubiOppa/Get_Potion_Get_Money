@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Potion_Pour : MonoBehaviour
 {
-    public ColorPotion colorPotion;
     public ParticleSystem liquidEffect;
-    public MeshRenderer meshRenderer;
 
+    [Header("============= เปลี่ยนสีน้ำในขวด =============")]
+    public ColorPotion colorPotion;
+    public MeshRenderer meshRenderer;
+    
     [Header("============= เอียงเทขวด =============")]
     public Transform rotationPivot;
+    public Vector3 initialEulerAngles = Vector3.zero;
     public Vector3 rotationTarget;
     public bool isRotating = false;
     private Quaternion targetRotation;
@@ -17,13 +20,16 @@ public class Potion_Pour : MonoBehaviour
     private float rotationProgress = 0f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float activationAngleThreshold = 60f;
-
+    
     Animator animator;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         liquidEffect.gameObject.SetActive(false);
+
+        rotationPivot.rotation = Quaternion.Euler(initialEulerAngles);
+
         SetBottleColor(); // ตั้งค่าสีน้ำในขวด
         StartRotation();
     }

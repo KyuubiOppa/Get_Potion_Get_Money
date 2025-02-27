@@ -16,6 +16,6 @@ MonoBehaviour:
   recipeID: RE07
   recipeName: Spider
   recipeSprite: {fileID: 21300000, guid: 98221be64c375a04cbdf14536dbc44a2, type: 3}
-  recipePrefab: {fileID: 1856483008093804781, guid: 8f58bb1d31d67c64c92be16c8a084b71,
+  recipePrefab: {fileID: 1424364851303112024, guid: 0f57340b50f88414d85f0e359392fc55,
     type: 3}
   colorPotion: 0

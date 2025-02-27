@@ -16,6 +16,6 @@ MonoBehaviour:
   recipeID: RE06
   recipeName: Feather
   recipeSprite: {fileID: 21300000, guid: 3b0ec5ca6f8cf0041aced6546269b65f, type: 3}
-  recipePrefab: {fileID: 7013301113985522677, guid: 62cf06c5c6989fd4e96075b865a2a3fd,
+  recipePrefab: {fileID: 8351177657184287225, guid: 71d7ec5ad9b73594e8c637516851dc5d,
     type: 3}
   colorPotion: 0
