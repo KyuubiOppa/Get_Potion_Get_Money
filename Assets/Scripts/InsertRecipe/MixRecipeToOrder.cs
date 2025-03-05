@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class MixRecipeToOrder : MonoBehaviour, IInteractable
 {
-    public Outline outline;
+    
 
     public bool canMix = false;
 
     public CheckRecipe checkRecipe;
     Collider col;
+
+    [Header("Outline")]
+    public Color onpointerEnterColor;
+    public Color onpointerExitColor;
+    public Outline outline;
 
     void Start()
     {
@@ -61,11 +66,11 @@ public class MixRecipeToOrder : MonoBehaviour, IInteractable
 
     public void DisableOutline() 
     {
-        outline.enabled = false;
+        outline.OutlineColor = onpointerExitColor;
     }
 
     public void  EnableOutline() 
     {
-        outline.enabled = true;
+        outline.OutlineColor = onpointerEnterColor;
     }
 }

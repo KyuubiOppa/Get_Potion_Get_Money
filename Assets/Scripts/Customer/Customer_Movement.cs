@@ -38,8 +38,18 @@ public class Customer_Movement : MonoBehaviour
             // ทำลายตัวเอง
             Destroy(gameObject);
 
-            // เรียกใช้การสปอว์นลูกค้าใหม่
-            CustomerManager.Instance.SpawnNextCustomer();
+            if (!GameManager.Instance.isBossMeeting)
+            {
+                // เรียกใช้การสปอว์นลูกค้าใหม่
+                CustomerManager.Instance.SpawnNextCustomer();
+            }
+        }
+
+        // ถ้าเป้าหมายคือ customerNullPoint และถึงจุดนั้นแล้ว
+        if (target == CustomerManager.Instance.customerNullPoint && Vector3.Distance(transform.position, target.position) < 0.1f)
+        {
+            // ทำลายตัวเอง
+            Destroy(gameObject);
         }
     }
 
@@ -66,6 +76,9 @@ public class Customer_Movement : MonoBehaviour
                 return;
             }
         }
+
+        // ถ้าไม่มีจุด HoldPoint ที่ว่าง ให้เดินไปยัง customerNullPoint
+        target = CustomerManager.Instance.customerNullPoint;
     }
 
     /// <summary>

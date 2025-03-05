@@ -8,7 +8,10 @@ public class ChangeStation : MonoBehaviour, IInteractable
     public CinemachineVirtualCamera cameraOn; // กล้องที่จะเปิด
     public CinemachineVirtualCamera[] camerasOff; // กล้องที่จะปิด
 
-    [SerializeField] private Outline outline;
+    [Header("Outline")]
+    public Color onpointerEnterColor;
+    public Color onpointerExitColor;
+    public Outline outline;
 
     void Start()
     {
@@ -42,11 +45,11 @@ public class ChangeStation : MonoBehaviour, IInteractable
 
     public void DisableOutline() 
     {
-        outline.enabled = false;
+        outline.OutlineColor = onpointerExitColor;
     }
 
     public void  EnableOutline() 
     {
-        outline.enabled = true;
+        outline.OutlineColor = onpointerEnterColor;
     }
 }

@@ -1010,7 +1010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e708169e310d1c94293eb7891bbf581f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorComboUIPoint: {fileID: 0}
   getOrderButton: {fileID: 2040786113997434233}
   customerCanvas: {fileID: 2054806656813069695}
   customerSpriteRenderer: {fileID: 5125298608050283580}

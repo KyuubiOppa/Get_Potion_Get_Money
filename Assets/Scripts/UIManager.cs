@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text playerMoneyTMP;
     public TMP_Text timeTMP;
     public TMP_Text dayTMP;
+    
+    public Slider bossGaugeSlider;
 
     [Header("Color Combo Canvas")]
     public TMP_Text colorComboText;

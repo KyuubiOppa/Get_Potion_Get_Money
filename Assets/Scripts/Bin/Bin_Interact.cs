@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Bin_Interact : MonoBehaviour, IInteractable
 {
-    public Outline outline;
 
     public CheckRecipe checkRecipe;
     public OrderServe orderServe;
+
+    [Header("Outline")]
+    public Color onpointerEnterColor;
+    public Color onpointerExitColor;
+    public Outline outline;
 
     void Start()
     {
@@ -29,11 +33,11 @@ public class Bin_Interact : MonoBehaviour, IInteractable
 
     public void DisableOutline() 
     {
-        outline.enabled = false;
+        outline.OutlineColor = onpointerExitColor;
     }
 
     public void  EnableOutline() 
     {
-        outline.enabled = true;
+        outline.OutlineColor = onpointerEnterColor;
     }
 }

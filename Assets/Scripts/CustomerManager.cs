@@ -6,6 +6,9 @@ public class CustomerManager : MonoBehaviour
 {
     public static CustomerManager Instance;
 
+    [Header("ตัวปล่อย Boss")]
+    public SO_Customer bossJackOlantern;
+
     [Header("ตัวสุ่มปล่อยลูกค้า")]
     public RandomCustomer[] randomCustomers;
 
@@ -22,7 +25,8 @@ public class CustomerManager : MonoBehaviour
 
     [Header("จุดลูกค้ายืน")]
     public Transform[] customerHoldPoint; // จุดที่ลูกค้ายืน
-    
+    [Header("จุดลูกค้าไม่มีที่ไป")]
+    public Transform customerNullPoint;
 
     private List<GameObject> spawnedCustomers = new List<GameObject>(); // เก็บลูกค้าที่ถูกสร้างขึ้นมา
 
@@ -143,6 +147,19 @@ public class CustomerManager : MonoBehaviour
         foreach (var customerSpecial in randomCustomerSpecials)
         {
             customerSpecial.customerRate = Random.Range(0.1f, 1f); // สุ่มค่า customerRate ระหว่าง 0 ถึง 1
+        }
+    }
+
+    public void SpawnBoss()
+    {
+        if (bossJackOlantern != null && bossJackOlantern.customerPrefab != null)
+        {
+            GameObject boss = Instantiate(bossJackOlantern.customerPrefab, customerSpawnPoint.position, Quaternion.identity);
+            Debug.Log("Boss ถูกเรียกแล้ว!");
+        }
+        else
+        {
+            Debug.LogWarning("ไม่มีข้อมูล Boss หรือ Prefab ของ Boss");
         }
     }
 }

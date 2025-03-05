@@ -7,7 +7,11 @@ public class InsertRecipe : MonoBehaviour, IInteractable
     public SO_Recipe so_Recipe; 
     public CheckRecipe checkRecipe;
 
+    [Header("Outline")]
+    public Color onpointerEnterColor;
+    public Color onpointerExitColor;
     private Outline outline;
+
 
     void Start()
     {
@@ -69,11 +73,11 @@ public class InsertRecipe : MonoBehaviour, IInteractable
 
     public void DisableOutline() 
     {
-        outline.enabled = false;
+        outline.OutlineColor = onpointerExitColor;
     }
 
     public void  EnableOutline() 
     {
-        outline.enabled = true;
+        outline.OutlineColor = onpointerEnterColor;
     }
 }
